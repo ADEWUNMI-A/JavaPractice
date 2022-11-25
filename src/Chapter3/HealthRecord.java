@@ -18,7 +18,6 @@ person’s age in years, BMI, maximum heart rate and target-heart-rate range. It
 the BMI values chart from Exercise 2.33. */
 
 
-
 import java.time.LocalDate;
 
 public class HealthRecord {
@@ -131,6 +130,7 @@ public class HealthRecord {
     public double getHeartRateRange2() {
         double heartRateRange2 = 0.85 * (220 - age());
         return heartRateRange2;
+
     }
     public void getTargetHeartRate() {
         System.out.printf("The target heart rate range is:  %f - %f" , getHeartRateRange1(), getHeartRateRange2());

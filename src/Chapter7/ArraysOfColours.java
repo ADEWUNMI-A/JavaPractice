@@ -18,6 +18,9 @@ public class ArraysOfColours {
 //            System.out.println(colours[index]);
             System.out.println(index + "     " + colours[index]);
         }
+
+        System.out.println();
+
         for (int index = 6; index >= 0; index--) {
 //            System.out.println(colours[index]);
             System.out.println(index + "     " + colours[index]);
