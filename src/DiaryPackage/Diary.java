@@ -38,7 +38,7 @@ public class Diary {
     }
 
     public void writeIntoDiary(String title, String message) {
-            int id = numberOfEntries() + 1;
+            int id = numberOfEntries() ;
             Entry newEntry = new Entry(id, title, message);
             entries.add(newEntry);
 
@@ -50,10 +50,35 @@ public class Diary {
     }
     public Entry findId(int id) {
         for (Entry entry : entries){
-            if (entry.getId() == id) return entry;
+            if (entry.getId() == id - 1 ) return entry;
         }
         return null;
     }
 
+    public void addEntries(int id, String newMessage) {
+        Entry updatedEntries = entries.get(id);
+        String message = updatedEntries.getMessage();
+        updatedEntries.setMessage(String.format("%s%n%s%n",message,newMessage));
 
+    }
+
+    public void updateEntries(int id, String newMessage) {
+        for (int i = 0; i < entries.size(); i++) {
+//            Entry newEntry = entries.get(i);
+            if (numberOfEntries() == id  ) {
+                addEntries(i, newMessage);
+            }
+        }
+    }
+
+    public void deleteEntries(int id) {
+        for (int i = 0; i < entries.size(); i++) {
+            Entry newEntry = entries.get(i);
+            if (newEntry.getId() == id) {
+              entries.remove(i);
+              break;
+            }
+        }
+
+    }
 }

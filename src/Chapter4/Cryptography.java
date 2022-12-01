@@ -60,6 +60,6 @@ public class Cryptography {
         firstDigit = secondTemp;
 
 
-        System.out.printf("Reversing the swap the digits %n %d %d %d %d", firstDigit, secondDigit, thirdDigit, forthDigit);
+        System.out.printf("Reversing the swap digits %n %d %d %d %d", firstDigit, secondDigit, thirdDigit, forthDigit);
     }
 }

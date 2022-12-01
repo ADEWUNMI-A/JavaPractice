@@ -24,10 +24,18 @@ public class Entry {
         return title;
     }
 
+    public void setTitle(String title) {
+        this.title = title;
+    }
+
+
     public String getMessage() {
         return message;
     }
 
+    public void setMessage(String message) {
+        this.message = message;
+    }
     public LocalDateTime getTimeOfEntry() {
         return timeOfEntry;
     }
@@ -42,7 +50,7 @@ public class Entry {
                 Title: %s
                 Message: %s
                 =================================
-                """, id, time, title, message);
+                """, id, timeOfEntry, title, message);
     }
 
 

@@ -10,7 +10,7 @@ public class DiaryTest {
 
     @BeforeEach
     void setUp() {
-         diary = new Diary("Adewunmi", "correctPassword");
+        diary = new Diary("Adewunmi", "correctPassword");
     }
 
     @Test
@@ -20,7 +20,7 @@ public class DiaryTest {
 
     @Test
     void newDiaryIsLocked() {
-       assertTrue(diary.isLocked());
+        assertTrue(diary.isLocked());
     }
 
     @Test
@@ -38,7 +38,7 @@ public class DiaryTest {
     }
 
     @Test
-    void diaryCanBeLockedTest(){
+    void diaryCanBeLockedTest() {
         diary.unlockWith("correctPassword");
         diary.lock();
         assertTrue(diary.isLocked());
@@ -51,7 +51,7 @@ public class DiaryTest {
         diary.write("Jesus loves me, this I know.",
                 "For the Bible tells me so. Little ones to him belong");
 
-        assertEquals(1,diary.numberOfEntries());
+        assertEquals(1, diary.numberOfEntries());
     }
 
     @Test
@@ -60,22 +60,42 @@ public class DiaryTest {
         diary.write("Jesus loves me, this I know.",
                 "For the Bible tells me so. Little ones to him belong");
 
-        assertEquals(0,diary.numberOfEntries());
+        assertEquals(0, diary.numberOfEntries());
     }
 
     @Test
     void canFindEntriesUsingIdTest() {
         diary.unlockWith("correctPassword");
-       assertFalse(diary.isLocked());
+        assertFalse(diary.isLocked());
         diary.write("Jesus loves me, this I know.",
                 "For the Bible tells me so. Little ones to him belong");
-        assertEquals(1,diary.numberOfEntries());
+        assertEquals(1, diary.numberOfEntries());
 
         Entry foundEntry = diary.findEntryWithId(1);
 
-        assertEquals(1,diary.numberOfEntries());
+        assertEquals(1, diary.numberOfEntries());
         assertEquals("Jesus loves me, this I know.", foundEntry.getTitle());
         assertEquals("For the Bible tells me so. Little ones to him belong", foundEntry.getMessage());
 
+    }
+
+    @Test
+    void canChangeEntries() {
+        diary.unlockWith("correctPassword");
+        assertFalse(diary.isLocked());
+        diary.write("Jesus loves me, this I know.",
+                "For the Bible tells me so. Little ones to him belong");
+        assertEquals(1, diary.numberOfEntries());
+
+        Entry foundEntry = diary.findEntryWithId(1);
+
+        assertEquals(1, diary.numberOfEntries());
+        assertEquals("Jesus loves me, this I know.", foundEntry.getTitle());
+        assertEquals("For the Bible tells me so. Little ones to him belong", foundEntry.getMessage());
+        assertEquals("Jesus loves me, this I know.", foundEntry.getTitle());
+        diary.updateEntries(1, "No story today, come tomorrow");
+
+//        assertEquals("No story today, come tomorrow", foundEntry.getMessage());
+        System.out.println(foundEntry.getMessage());
     }
 }
