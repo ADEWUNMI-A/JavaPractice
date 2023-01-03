@@ -4,7 +4,6 @@ public class BarChart {
     public static void main(String[] args) {
         int counter = 1;
         int number = 0;
-        int counter2 = 1;
         Scanner input = new Scanner(System.in);
 
         System.out.print("Enter a number between 1 to 30: ");

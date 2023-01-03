@@ -1,9 +1,9 @@
-package Chapter9;
+package Chapter9.AnimalPackage;
 
 public class Animal {
 
-    private  Frog opolo;
-    private  Bird eye;
+    private Frog opolo;
+    private Bird eye;
 
     Animal [] animals = {new Fish(), new Bird(), new Frog()};
 

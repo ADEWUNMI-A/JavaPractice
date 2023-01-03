@@ -1,5 +1,6 @@
 package DiaryPackage;
 
+import javax.swing.*;
 import java.util.Scanner;
 
 public class Main {
@@ -91,13 +92,14 @@ public class Main {
     }
 
     private static String input(String prompt) {
-        print(prompt);
-        System.exit(0);
-        return keyboardInput.nextLine();
+//        print(prompt);
+        return JOptionPane.showInputDialog(null, prompt);
+//        System.exit(0);
+//        return keyboardInput.nextLine();
     }
 
     private static void print(String prompt) {
-        System.out.println(prompt);
+        JOptionPane.showMessageDialog(null,prompt);
     }
 
     private static void findById() {

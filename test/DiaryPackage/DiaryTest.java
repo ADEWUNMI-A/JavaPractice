@@ -56,10 +56,14 @@ public class DiaryTest {
 
     @Test
     void entriesCannotBeAddedWhenDiaryIsLockedTest() {
-        diary.isLocked();
-        diary.write("Jesus loves me, this I know.",
-                "For the Bible tells me so. Little ones to him belong");
-
+        assertTrue(diary.isLocked());
+        try {
+            diary.write("Jesus loves me, this I know.",
+                    "For the Bible tells me so. Little ones to him belong");
+        }
+        catch(Exception e) {
+            System.out.println(e.getMessage());
+        }
         assertEquals(0, diary.numberOfEntries());
     }
 
@@ -97,5 +101,12 @@ public class DiaryTest {
 
 //        assertEquals("No story today, come tomorrow", foundEntry.getMessage());
         System.out.println(foundEntry.getMessage());
+    }
+
+    @Test
+    void writingToLockedDiaryThrowsExceptionTest() {
+        assertTrue(diary.isLocked());
+        assertThrows(Exception.class, ()->diary.write("Anirah's break up with Simi",
+                "I did not know what I did oo, He just came back one day and ..."));
     }
 }

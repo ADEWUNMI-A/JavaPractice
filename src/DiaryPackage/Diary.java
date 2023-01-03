@@ -34,7 +34,9 @@ public class Diary {
 
 
     public void write(String title, String message) {
-        if (!isLocked) writeIntoDiary(title, message);
+
+        if (isLocked) throw new IllegalArgumentException("Please unlock the diary before writing");
+        writeIntoDiary(title, message);
     }
 
     public void writeIntoDiary(String title, String message) {

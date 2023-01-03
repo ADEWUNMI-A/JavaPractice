@@ -1,31 +1,31 @@
 package Chapter8;
 
 public class Date {
-    private int day;
-    private int month;
-    private int year;
+    private static int day;
+    private static int month;
+    private static int year;
 
     private static final int[] maxDayPerMonth = {0, 31, 28, 31, 30, 31, 30, 31, 31, 30, 31, 30, 31};
     public Date(int day, int month, int year) {
         validateDay();
         validateMonth();
         validateLeapYear(day, month, year);
-        this.day = day;
-        this.month = month;
-        this.year = year;
+        Date.day = day;
+        Date.month = month;
+        Date.year = year;
     }
 
-    public void validateDay() {
+    private static void validateDay() {
         boolean isValidDay = (day <= 0 || day > maxDayPerMonth[month]) && (month == 2 && day >= 29);
         if(isValidDay) throw new IllegalArgumentException("day " + day + " is out of range for the specified month");
         }
 
-    public void validateMonth() {
+    private static void validateMonth() {
         boolean isValidMonth = month < 0 || month > 12;
         if(isValidMonth) throw new IllegalArgumentException("month" + month+ "is out of range");
     }
 
-    public void validateLeapYear(int day, int month, int year) {
+    private static void validateLeapYear(int day, int month, int year) {
         boolean isFeb = month == 2;
         boolean isValidFeb = !(isFeb && day > 28);
         boolean isFebLeap = (isFeb && day == 29);
