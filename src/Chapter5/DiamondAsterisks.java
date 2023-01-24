@@ -18,7 +18,6 @@ public class DiamondAsterisks {
         // Outer loop 1
         // prints the first half diamond
         for (m = 1; m <= number; m++) {
-
             // Inner loop 1 print whitespaces inbetween
             for (n = 1; n <= number - m; n++) {
                 System.out.print(" ");

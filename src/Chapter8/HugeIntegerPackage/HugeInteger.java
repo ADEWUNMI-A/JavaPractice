@@ -16,13 +16,12 @@ import java.math.BigInteger;
 
 public class HugeInteger {
     private int[] numberList;
-    private int number;
+    private final int number;
 
     public HugeInteger(int number) {
         numberList = new int[40];
         this.number = number;
     }
-
 
     public void parse(String number) {
         numberList = new int[40];
