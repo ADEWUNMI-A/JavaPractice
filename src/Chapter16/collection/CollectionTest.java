@@ -10,27 +10,30 @@ public class CollectionTest {
 
 //        colorList.addAll(Arrays.asList(colors));
         Collections.addAll(colorList, colors);
-        System.out.println(colorList);
+        printList(colorList);
 
         String [] removeList = {"brown", "lemon", "orange"};
         List<String> removeColor = new ArrayList<>();
         removeColor.addAll(Arrays.asList(removeList));
-        System.out.println(colorList);
+        printList(colorList);
 
         removeColors(colorList,removeColor);
-        System.out.println(colorList);
-
-
+        printList(colorList);
     }
 
     private static void removeColors(Collection<String> initialList, Collection<String> listToRemove) {
-
         Iterator<String> iterator = initialList.iterator();
-
         while(iterator.hasNext()) {
             if (listToRemove.contains(iterator.next())) {
                 iterator.remove();
             }
         }
+    }
+
+    private static void printList(List<String> list){
+        for(String listItem : list) {
+                System.out.printf("%s ", listItem);
+        }
+        System.out.println();
     }
 }

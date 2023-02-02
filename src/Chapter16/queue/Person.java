@@ -1,11 +1,18 @@
 package Chapter16.queue;
 
+import Chapter3.HealthRecord;
+
 import java.util.Comparator;
 
 public class Person implements Comparator<Person> {
     private String firstName;
     private int age;
+    public enum Gender{MALE, FEMALE};
 
+    public Person(String firstName, int age, Gender gender) {
+        this.firstName = firstName;
+        this.age = age;
+    }
     public Person(String firstName, int age) {
         this.firstName = firstName;
         this.age = age;
