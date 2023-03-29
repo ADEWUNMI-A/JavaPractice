@@ -22,7 +22,6 @@ public class RunningTotal {
             number = sc.nextInt();
             numberList.add(number);
             System.out.println(runningTotalOf(numberList));
-
         }
     }
 }

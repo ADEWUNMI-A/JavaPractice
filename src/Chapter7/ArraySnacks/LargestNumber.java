@@ -12,7 +12,6 @@ public class LargestNumber {
             if (numberList.get(index) > maxList) {
                 maxList = numberList.get(index);
             }
-
         }
         return maxList;
     }

@@ -43,7 +43,8 @@ public class Phone {
             menu();
         }
     }
-    public static void phoneBook() {
+    public static void
+    phoneBook() {
         System.out.println("Phone book");
         System.out.println("""
                 1. Search\s
