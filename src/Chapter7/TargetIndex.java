@@ -1,4 +1,6 @@
 package Chapter7;
+
+//An array that takes integer and return the sum of any two number to give a targeted number.
 public class TargetIndex {
     public static String tIndex(int target, int... numbers) {
         int i;
